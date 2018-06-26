@@ -1,5 +1,6 @@
 # vue-update-message
 Small Vuejs plugin to show update messages to the user. 
+
 Maggage text support HTML, so it can be styled the way you want. 
 
 ### Browser support
@@ -42,7 +43,7 @@ this.$message.info("<h5>This is a sticky, dismissable message</h5>", {
 ### Props
 
 #### Service props
-**These props can be set before the plugin is initialized.**
+These props can be set before the plugin is initialized.
 
 ```javascript
 import Vue from 'vue';
@@ -61,10 +62,13 @@ Vue.use(message, props);
 | ------------- |:----------------------:| ---------------:|
 | position      | fixed                  | fixed, absolute |
 | width         | 20vw (20% sceen width) | any css width   |   
-| placement     | top                    |   top, bottom   |
+| mode          | single                 | single, stack   |
+
+>**Single** mode will display only one message on screen and when you create new message the old one will hide. 
+>**Stack** mode will display multiple messages on screen. All messages will be shown on screeen and they will dissapear according to their settings (duration, dissmisable, etc...)
 
 #### Message props
-**These props can be set when the message is created.**
+These props can be set when the message is created.
 ```javascript
 this.$message.info("some message", {
     dismissable: true,
@@ -72,9 +76,10 @@ this.$message.info("some message", {
 });
 ```
 
-| Prop          | Default  | Options      |
-| ------------- |:--------:| ------------:|
-| duration      | 3000     |              |
-| dismissable   | false    | true, false  |   
-| isSticky      | false    | true         |
-| container     |          | css selector |
+| Prop          | Default  | Options                                                    |
+| ------------- |:--------:| ----------------------------------------------------------:|
+| duration      | 3000     |                                                            |
+| dismissable   | false    | true, false                                                |   
+| isSticky      | false    | true                                                       |
+| container     |          | css selector                                               |
+| placement     | top      | top, top-left, top-right, bottom, bottom-left, bottom-right|

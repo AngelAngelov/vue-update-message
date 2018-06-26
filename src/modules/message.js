@@ -5,13 +5,18 @@ class Message {
         this.options = props.options;
         this.container = props.container;
         this.el = document.createElement('div');
-        this.el.className = `alert alert-${this.type} alert-dismissible fade alert-item`;
+        this.el.className = `alert alert-${this.type} alert-dismissible fade alert-item update-message ${this.options.placement}`;
+
+        if (props.options.element) {
+            this.el.className += ' in-container';
+        }
+
         this.el.setAttribute('role', 'alert');
         const html = this.template();
         this.el.innerHTML = html;
     }
     mount() {
-        if (this.options.placement === 'top') {
+        if (this.options.placement.indexOf('top') !== -1) {
             this.container.insertBefore(this.el, this.container.firstChild);
         } else {
             this.container.appendChild(this.el);
@@ -33,7 +38,11 @@ class Message {
             }, this.options.duration, this.el);
         }
     };
-
+    hide() {
+        if (this.el.parentElement) {
+            this.el.parentElement.removeChild(this.el);
+        }
+    }
     template() {
         let dismissButton = '';
 
