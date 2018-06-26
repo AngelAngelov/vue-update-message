@@ -22,9 +22,9 @@ class Message {
 
         if (!this.options.isSticky) {
             setTimeout((el) => {
-                console.log(el);
                 el.addEventListener("transitionend", function (e) {
-                    e.target.remove();
+                    //e.target.remove(); //This is not supported by IE
+                    e.target.parentElement.removeChild(e.target);
                 });
 
                 //remove class show to trigger bootstrap hide animation
