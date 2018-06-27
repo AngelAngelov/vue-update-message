@@ -94,6 +94,18 @@ const props = {
 
 Vue.use(messageService, props);
 ...
+...
+//in the Vue component after some operation you call the success message like this
+methods: {
+    doSomething() {
+      ...
+      this.$message.success("top left", {
+        dismissable: true,
+        isSticky: true,
+        placement: "top-left"
+      });
+    }
+...
 ```
 
 Here is the result: 
