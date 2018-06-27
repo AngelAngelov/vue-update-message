@@ -17,7 +17,7 @@ export default {
             error(message, userOptions) {
                 const uiMessage = MessageService.show({
                     message,
-                    type: 'danger',
+                    type: 'error',
                     userOptions
                 });
             },

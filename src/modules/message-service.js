@@ -110,6 +110,31 @@ class MessageService {
                         position: ${this.constOptions.position};
                         width: ${this.constOptions.width};
                         opacity: .8;
+                        padding: .75rem 1.25rem;
+                        margin-bottom: 1rem;
+                        border: 1px solid transparent;
+                        border-radius: .25rem;
+                    }
+                    .update-message, .update-message > * {
+                        box-sizing: border-box;
+                    }
+                    .update-message-dismissible {
+                        padding-right: 4rem !important;
+                    }
+                    .update-success {
+                        color: ${this.constOptions.successText};
+                        background-color: ${this.constOptions.successBackground};
+                        border-color: ${this.constOptions.successBorder};
+                    }
+                    .update-error {
+                        color: ${this.constOptions.errorText};
+                        background-color: ${this.constOptions.errorBackground};
+                        border-color: ${this.constOptions.errorBorder};
+                    }
+                    .update-info {
+                        color: ${this.constOptions.infoText};
+                        background-color: ${this.constOptions.infoBackground};
+                        border-color: ${this.constOptions.infoBorder};
                     }
                     .update-message.top {
                         top: 2rem;
@@ -139,12 +164,30 @@ class MessageService {
                     }
                     .update-message.in-container {
                         position: relative !important;
-                        width: 100%;
+                        top: auto !important;
+                        bottom: auto !important;
+                        left: auto !important;
+                        right: auto !important;
+                        width: 100% !important;
+                        transform: none !important;
+                    }
+                    .fade {
+                        transition: opacity .15s linear;
+                    }
+                    .fade:not(.show) {
+                        opacity: 0;
                     }`;
 
         let containerCss = `.custom-message-container {
                                 position: ${this.constOptions.position};
                                 width: ${this.constOptions.width};
+                                box-sizing: border-box;
+                            }
+                            .custom-message-container > * {
+                                box-sizing: border-box;
+                            }
+                            .update-message::after, .update-message::before{
+                                box-sizing: border-box;
                             }
                             .custom-message-container .update-message {
                                 position: relative !important;
@@ -182,6 +225,42 @@ class MessageService {
                                 right: 1rem;
                             }`;
 
+        let closeBtnCss = `.close:not(:disabled):not(.disabled) {
+                                cursor: pointer;
+                            }
+                            .update-message-dismissible .close {
+                                position: absolute;
+                                top: 0;
+                                right: 0;
+                                padding: .75rem 1.25rem;
+                                color: inherit;
+                            }
+                            button.close {
+                                padding: 0;
+                                background-color: transparent;
+                                border: 0;
+                                -webkit-appearance: none;
+                            }
+                            [type=reset], [type=submit], button, html [type=button] {
+                                -webkit-appearance: button;
+                            }
+                            .close {
+                                float: right;
+                                font-size: 1.5rem;
+                                font-weight: 700;
+                                line-height: 1;
+                                color: #000;
+                                text-shadow: 0 1px 0 #fff;
+                                opacity: .5;
+                            }
+                            button, select {
+                                text-transform: none;
+                            }
+                            button, input {
+                                overflow: visible;
+                            }`;
+
+        elCss += closeBtnCss;
         if (this.constOptions.mode === 'stack') {
             elCss += containerCss;
         }
@@ -189,18 +268,27 @@ class MessageService {
         return elCss;
     };
 
-    //default options may be ovverridden by the user
+    //default options may be ovverridden by the user when thw message is called
     defaultOptions = {
         duration: 3000,
         dismissable: false,
         isSticky: false,
         placement: 'top'
     };
-    //const options shoul never be changed by the user 
+    //const options can be changed only before adding the service to Vue i.e. Vue.use(message, options)
     constOptions = {
         position: 'fixed',
         width: '20vw',
-        mode: 'stack'
+        mode: 'single',
+        successText: '#155724',
+        successBackground: '#d4edda',
+        successBorder: '#c3e6cb',
+        errorText: '#721c24',
+        errorBackground: '#f8d7da',
+        errorBorder: '#f5c6cb',
+        infoText: '#0c5460',
+        infoBackground: '#d1ecf1',
+        infoBorder: '#bee5eb'
     };
 }
 

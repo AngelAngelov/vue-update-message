@@ -13,7 +13,7 @@
       <button class="btn btn-info ml-3" @click="bottomCenter3sec">bottom center - duration 3 sec</button>
     </div>
     <div class="p-3">
-      <h5>Show messages in container element</h5>
+      <h4>Show messages in container element</h4>
       <button class="btn btn-success" @click="onSuccessInContainer">Show success</button>
       <button class="btn btn-danger ml-3" @click="onErrorInContainer">Show error</button>
       <button class="btn btn-info ml-3" @click="onInfoInContainer">Show info</button>
@@ -111,4 +111,10 @@ export default {
 </script>
 
 <style scoped>
+.ml-3 {
+  margin-left: 1rem;
+}
+.p-3 {
+  padding: 1rem;
+}
 </style>
