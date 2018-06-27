@@ -74,6 +74,7 @@ Vue.use(messageService, props);
 | infoBorder        | '#bee5eb' (default Bootstrap info border)              | any css color    |
 
 >**Single** mode will display only one message on screen and when you create new message the old one will hide. 
+>
 >**Stack** mode will display multiple messages on screen. All messages will be shown on screeen and they will dissapear according to their settings (duration, dissmisable, etc...)
 
 You can easily override the message dafault color, but it is possible only before plugin inicialization i.e. you can not change the color dynamically when creating a message.
@@ -97,7 +98,7 @@ Vue.use(messageService, props);
 
 Here is the result: 
 
-![alt text](https://github.com/AngelAngelov/vue-update-message/src/assets/success-color-change.png "Success message color change")
+![alt text](https://github.com/AngelAngelov/vue-update-message/blob/master/src/assets/success-color-change.png "Success message color change")
 
 #### Message props
 These props can be set when the message is created.
