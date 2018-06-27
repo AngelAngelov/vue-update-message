@@ -1,13 +1,13 @@
 # vue-update-message
 Small Vuejs plugin to show update messages to the user. 
 
-Maggage text support HTML, so it can be styled the way you want. 
+Massage text support HTML, so it can be styled the way you want. 
 
-### Browser support
+## Browser support
 
 Chome, Firefox, Edge, IE(10+)
 
-### Install
+## Install
 
 ```javascript
 import Vue from 'vue';
@@ -16,7 +16,7 @@ import messageService from 'vue-update-message';
 Vue.use(messageService);
 ...
 ```
-### Usage
+## Usage
 
 ```javascript
 //Success message
@@ -35,14 +35,14 @@ this.$message.error("<h2>This will dissapear in 5 seconds </h2>",{
 ```javascript
 //Info message
 this.$message.info("<h5>This is a sticky, dismissable message</h5>", {
-    dismissable: true,
+    dismissible: true,
     isSticky: true
 });
 ```
 
-### Props
+## Props
 
-#### Service props
+### Service props
 These props can be set before the plugin is initialized.
 
 ```javascript
@@ -73,6 +73,8 @@ Vue.use(messageService, props);
 | infoBackground    | '#d1ecf1' (default Bootstrap info background color)    | any css color    |
 | infoBorder        | '#bee5eb' (default Bootstrap info border)              | any css color    |
 
+**position** option behave as the same as CSS 'position' property.
+
 >**Single** mode will display only one message on screen and when you create new message the old one will hide. 
 >
 >**Stack** mode will display multiple messages on screen. All messages will be shown on screeen and they will dissapear according to their settings (duration, dissmisable, etc...)
@@ -100,7 +102,7 @@ methods: {
     doSomething() {
       ...
       this.$message.success("top left", {
-        dismissable: true,
+        dismissible: true,
         isSticky: true,
         placement: "top-left"
       });
@@ -112,11 +114,11 @@ Here is the result:
 
 ![alt text](https://github.com/AngelAngelov/vue-update-message/blob/master/src/assets/success-color-change.png "Success message color change")
 
-#### Message props
+### Message props
 These props can be set when the message is created.
 ```javascript
 this.$message.info("some message", {
-    dismissable: true,
+    dismissible: true,
     isSticky: true
 });
 ```
@@ -124,7 +126,15 @@ this.$message.info("some message", {
 | Prop          | Default  | Options                                                     |
 | ------------- | -------- | ----------------------------------------------------------- |
 | duration      | 3000     |                                                             |
-| dismissable   | false    | true, false                                                 |   
+| dismissible   | false    | true, false                                                 |   
 | isSticky      | false    | true                                                        |
-| container     |          | css selector                                                |
 | placement     | top      | top, top-left, top-right, bottom, bottom-left, bottom-right |
+| container     |          | css selector                                                |
+
+**placement** option is used to set the position of the message on screen
+
+By setting **isSticky** option to *true*, duration option is ignored and the message will not dissapear from screen. To hide the message set   **dismissible** option to *true* and this will add a close.
+
+If you add css selector to **container** element prop, the messages will be displayed in that HTML element.
+
+>**Note:** When you use container element to show your messages, placement option is not available.
