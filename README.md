@@ -59,7 +59,7 @@ Vue.use(messageService, props);
 ...
 ```
 | Prop              | Default                                                | Options          |
-| ----------------- |:------------------------------------------------------:| ----------------:|
+| ----------------- | ------------------------------------------------------ | ---------------- |
 | position          | fixed                                                  | fixed, absolute  |
 | width             | 20vw (20% sceen width)                                 | any css width    |   
 | mode              | single                                                 | single, stack    |
@@ -122,7 +122,7 @@ this.$message.info("some message", {
 ```
 
 | Prop          | Default  | Options                                                     |
-| ------------- |:--------:| -----------------------------------------------------------:|
+| ------------- | -------- | ----------------------------------------------------------- |
 | duration      | 3000     |                                                             |
 | dismissable   | false    | true, false                                                 |   
 | isSticky      | false    | true                                                        |
