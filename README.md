@@ -1,7 +1,7 @@
 # vue-update-message
 Small Vuejs plugin to show update messages to the user. 
 
-Massage text support HTML, so it can be styled the way you want. 
+Massage text supports **HTML**, so it can be styled the way you want. 
 
 ## Browser support
 
