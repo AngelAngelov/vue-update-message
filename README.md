@@ -73,11 +73,11 @@ Vue.use(messageService, props);
 | infoBackground    | '#d1ecf1' (default Bootstrap info background color)    | any css color    |
 | infoBorder        | '#bee5eb' (default Bootstrap info border)              | any css color    |
 
-**position** option behave as the same as CSS 'position' property.
+**Position** option behave the same as CSS 'position' property.
 
->**Single** mode will display only one message on screen and when you create new message the old one will hide. 
->
->**Stack** mode will display multiple messages on screen. All messages will be shown on screeen and they will dissapear according to their settings (duration, dissmisable, etc...)
+**Single** mode will display only one message on screen and when you create new message the old one will hide. 
+
+**Stack** mode will display multiple messages on screen. All messages will be shown on screeen and they will dissapear according to their settings (duration, dissmisable, etc...)
 
 You can easily override the message dafault color, but it is possible only before plugin inicialization i.e. you can not change the color dynamically when creating a message.
 
@@ -137,4 +137,4 @@ By setting **isSticky** option to *true*, duration option is ignored and the mes
 
 If you add css selector to **container** element prop, the messages will be displayed in that HTML element.
 
->**Note:** When you use container element to show your messages, placement option is not available.
+**Note: When you use container element to show your messages, placement option is not available!**
