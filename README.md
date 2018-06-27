@@ -7,6 +7,9 @@ Massage text supports **HTML**, so it can be styled the way you want.
 
 Chome, Firefox, Edge, IE(10+)
 
+## Demo
+[Simple Demo](https://angelangelov.github.io/vue-update-message/)
+
 ## Install
 
 ```javascript
