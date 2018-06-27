@@ -121,10 +121,10 @@ this.$message.info("some message", {
 });
 ```
 
-| Prop          | Default  | Options                                                    |
-| ------------- |:--------:| ----------------------------------------------------------:|
-| duration      | 3000     |                                                            |
-| dismissable   | false    | true, false                                                |   
-| isSticky      | false    | true                                                       |
-| container     |          | css selector                                               |
-| placement     | top      | top, top-left, top-right, bottom, bottom-left, bottom-right|
+| Prop          | Default  | Options                                                     |
+| ------------- |:--------:| -----------------------------------------------------------:|
+| duration      | 3000     |                                                             |
+| dismissable   | false    | true, false                                                 |   
+| isSticky      | false    | true                                                        |
+| container     |          | css selector                                                |
+| placement     | top      | top, top-left, top-right, bottom, bottom-left, bottom-right |
