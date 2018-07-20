@@ -65,7 +65,7 @@ Vue.use(messageService, props);
 | ----------------- | ------------------------------------------------------ | ---------------- |
 | position          | fixed                                                  | fixed, absolute  |
 | width             | 20vw (20% sceen width)                                 | any css width    |   
-| mode              | single                                                 | single, stack    |
+| mode              | stack                                                  | single, stack    |
 | successText       | '#155724' (default Bootstrap success text color)       | any css color    |
 | successBackground | '#d4edda' (default Bootstrap success background color) | any css color    |
 | successBorder     | '#c3e6cb' (default Bootstrap success border)           | any css color    |

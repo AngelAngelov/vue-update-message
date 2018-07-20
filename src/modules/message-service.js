@@ -1,7 +1,7 @@
 import Message from './message';
 
 class MessageService {
-    constructor(props) {
+    constructor() {
         this.counter = 1;
         this.isInitialCall = true;
         this.containers = [];
@@ -86,7 +86,7 @@ class MessageService {
 
             message.mount();
         }
-    };
+    }
 
     addStyleInHeader() {
         var css = this.containerStyle(),
@@ -101,11 +101,9 @@ class MessageService {
         }
 
         head.appendChild(style);
-    };
+    }
 
     containerStyle() {
-        let css = '';
-
         let elCss = `.update-message {
                         position: ${this.constOptions.position};
                         width: ${this.constOptions.width};
@@ -182,6 +180,7 @@ class MessageService {
                                 position: ${this.constOptions.position};
                                 width: ${this.constOptions.width};
                                 box-sizing: border-box;
+                                z-index: 9999;
                             }
                             .custom-message-container > * {
                                 box-sizing: border-box;
@@ -266,20 +265,20 @@ class MessageService {
         }
 
         return elCss;
-    };
+    }
 
     //default options may be ovverridden by the user when thw message is called
     defaultOptions = {
         duration: 3000,
-        dismissable: false,
+        dismissible: false,
         isSticky: false,
         placement: 'top'
-    };
+    }
     //const options can be changed only before adding the service to Vue i.e. Vue.use(message, options)
     constOptions = {
         position: 'fixed',
         width: '20vw',
-        mode: 'single',
+        mode: 'stack',
         successText: '#155724',
         successBackground: '#d4edda',
         successBorder: '#c3e6cb',
@@ -289,7 +288,7 @@ class MessageService {
         infoText: '#0c5460',
         infoBackground: '#d1ecf1',
         infoBorder: '#bee5eb'
-    };
+    }
 }
 
 export default new MessageService();

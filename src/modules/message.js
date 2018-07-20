@@ -26,7 +26,7 @@ class Message {
         //addclass show to trigger bootstrap show animation 
         this.el.className += ' show';
 
-        if (this.options.dismissable) {
+        if (this.options.dismissible) {
             this.el.className += ' update-message-dismissible';
             const closeBtn = this.el.querySelector('button.close');
             closeBtn.addEventListener('click', (e) => {
@@ -40,7 +40,7 @@ class Message {
                 context.removeMessage(context.el);
             }, this.options.duration, this);
         }
-    };
+    }
     removeMessage(messageElement) {
         messageElement.addEventListener("transitionend", function (e) {
             //e.target.remove(); //This is not supported by IE
@@ -59,12 +59,12 @@ class Message {
     template() {
         let dismissButton = '';
 
-        if (this.options.dismissable) {
+        if (this.options.dismissible) {
             dismissButton = this.dismissBtnTemplate;
         }
 
         return `${this.message} ${dismissButton}`
-    };
+    }
 
     dismissBtnTemplate = `<button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true">&times;</span>

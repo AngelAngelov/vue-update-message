@@ -1,7 +1,10 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div class="row">
+      <img src="./assets/logo.png" height="100px;">
+      <h1 class="mt-3">vue-update-message</h1>
+    </div>
+    <HelloWorld msg="Welcome to Your Vue.js App" />
   </div>
 </template>
 
