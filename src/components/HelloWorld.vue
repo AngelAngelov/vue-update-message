@@ -34,7 +34,7 @@
         </div>
         <div class="col-md-3">
           <label>Position</label>
-          <select class="form-control" v-model="msgSettings.placement">
+          <select class="form-control" v-model="msgSettings.placement" :disabled="msgSettings.showInContainer == 'true'">
             <option value="top">Top</option>
             <option value="top-left">Top left</option>
             <option value="top-right">Top right</option>
@@ -120,7 +120,13 @@ export default {
         default:
           break;
       }
+    },
+    changeMode() {
+      this.$message.setMode(this.mode);
     }
+  },
+  watch: {
+    mode: "changeMode"
   }
 };
 </script>

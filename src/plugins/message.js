@@ -2,7 +2,6 @@ import MessageService from '../modules/message-service';
 
 export default {
     install: function (Vue, options) {
-        //this.defaultOptions = Object.assign(this.defaultOptions, options || {});
         MessageService.init(options)
 
         Vue.prototype.$message = {
@@ -26,6 +25,9 @@ export default {
                     type: 'info',
                     userOptions
                 });
+            },
+            setMode(mode) {
+                MessageService.setMode(mode);
             }
         }
     }

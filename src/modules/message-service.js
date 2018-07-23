@@ -88,6 +88,12 @@ class MessageService {
         }
     }
 
+    setMode(mode) {
+        if (mode === 'stack' || mode === 'single') {
+            this.constOptions.mode = mode;
+        }
+    }
+
     addStyleInHeader() {
         var css = this.containerStyle(),
             head = document.head || document.getElementsByTagName('head')[0],
