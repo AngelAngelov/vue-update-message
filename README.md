@@ -43,6 +43,31 @@ this.$message.info("<h5>This is a sticky, dismissable message</h5>", {
 });
 ```
 
+## Methods
+
+success(content, props) 
+
+error(content, props) 
+
+info(content, props) 
+
+**content** can be text ot HTML string, that will be diplayed in message body.
+
+**props** is object that contains message props - see **Props** section below 
+
+Syntax
+
+```javascript
+this.$message.success(
+`<h3 class="myClass">
+    <i claaa="fa fa-icon"></i> 
+    Some HTML ot text message
+</h3> 
+<p>Some more message text</p>`, { 
+    ...some props
+});
+```
+
 ## Props
 
 ### Service props
@@ -61,20 +86,20 @@ const props = {
 Vue.use(messageService, props);
 ...
 ```
-| Prop              | Default                                                | Options          |
-| ----------------- | ------------------------------------------------------ | ---------------- |
-| position          | fixed                                                  | fixed, absolute  |
-| width             | 20vw (20% sceen width)                                 | any css width    |   
-| mode              | stack                                                  | single, stack    |
-| successText       | '#155724' (default Bootstrap success text color)       | any css color    |
-| successBackground | '#d4edda' (default Bootstrap success background color) | any css color    |
-| successBorder     | '#c3e6cb' (default Bootstrap success border)           | any css color    |
-| errorText         | '#721c24' (default Bootstrap danger text color)        | any css color    |
-| errorBackground   | '#f8d7da' (default Bootstrap danger background color)  | any css color    |
-| errorBorder       | '#f5c6cb' (default Bootstrap danger border)            | any css color    |
-| infoText          | '#0c5460' (default Bootstrap info text color)          | any css color    |
-| infoBackground    | '#d1ecf1' (default Bootstrap info background color)    | any css color    |
-| infoBorder        | '#bee5eb' (default Bootstrap info border)              | any css color    |
+| Prop              | Default                                                  | Options          |
+| ----------------- | -------------------------------------------------------- | ---------------- |
+| position          | fixed                                                    | fixed, absolute  |
+| width             | 20vw (20% sceen width)                                   | any css width    |   
+| mode              | stack                                                    | single, stack    |
+| successText       | '#155724' (default Bootstrap 4 success text color)       | any css color    |
+| successBackground | '#d4edda' (default Bootstrap 4 success background color) | any css color    |
+| successBorder     | '#c3e6cb' (default Bootstrap 4 success border)           | any css color    |
+| errorText         | '#721c24' (default Bootstrap 4 danger text color)        | any css color    |
+| errorBackground   | '#f8d7da' (default Bootstrap 4 danger background color)  | any css color    |
+| errorBorder       | '#f5c6cb' (default Bootstrap 4 danger border)            | any css color    |
+| infoText          | '#0c5460' (default Bootstrap 4 info text color)          | any css color    |
+| infoBackground    | '#d1ecf1' (default Bootstrap 4 info background color)    | any css color    |
+| infoBorder        | '#bee5eb' (default Bootstrap 4 info border)              | any css color    |
 
 **Position** option behave the same as CSS 'position' property.
 
