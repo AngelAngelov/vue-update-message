@@ -11,6 +11,9 @@ Chome, Firefox, Edge, IE(10+)
 [Simple Demo](https://angelangelov.github.io/vue-update-message/)
 
 ## Install
+**npm intall vue-update-message**
+
+## Usage
 
 ```javascript
 import Vue from 'vue';
@@ -19,7 +22,6 @@ import messageService from 'vue-update-message';
 Vue.use(messageService);
 ...
 ```
-## Usage
 
 ```javascript
 //Success message
