@@ -404,7 +404,7 @@
                 data: function () {
                     return {
                         mode: "stack",
-                        message: '<h4><span class="fa fa-exclamation-triangle"></span> Test message!</h4>\n<p>This is a sample message text ...</p>',
+                        message: '<h4><span class="fa fa-exclamation-triangle"></span> Test message!</h4>\n<img src="https://picsum.photos/40/40/?random" alt="img" style="border-radius: 50%; float: left;">\n<p>This is a sample message text ...</p>',
                         msgSettings: {
                             type: "success",
                             placement: "top",
